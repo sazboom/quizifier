@@ -1,9 +1,12 @@
-var Question = Backbone.Model.extend({
-  recordAnswer: function(str){
-    this.set({recordedAnswer : str})
+var QuestionModel = Backbone.Model.extend({
+  initialize : function(){
+    this.view = new QuestionView({model:this})
+  },
+  recordAnswer: function(awr){
+    this.set({recordedAnswer : awr})
   },
   correctAnswer : function(){
-    return this.get('answer').correctAnswer()
+    return this.answer.correctAnswer()
   },
   answeredCorrectly: function(str){
     return this.get('recordedAnswer') === this.correctAnswer()

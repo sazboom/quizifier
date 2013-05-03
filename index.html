@@ -33,21 +33,27 @@
       <!-- Main Container -->
 
       <div class="main-container container">
-        <div class="row">
-          <h1>Questions</h1>
-        </div>
         <div id="questions-container">
           
           <!-- Questions Go Here -->
 
+        </div>
+        <div id="summary-container">
+          <div class="jumbo">
+            <h2>Thank you for Taking our Quiz!</h2>
+            <h4>Here is your reward!</h4>
+          </div>
+          <div class="row reward">
+            <iframe width="560" height="315" src="http://www.youtube.com/embed/Im4TO03CuF8" frameborder="0" allowfullscreen></iframe>
+          </div>
         </div>
       </div>
 
       <!-- End Main Container -->
 
       <script id="question" type="text/html">
-        <div class="row question {{#active}} active {{/active}}">
-          <h2>Aaron is awesome</h2>
+        <div class="row question" data-question-id={{id}}>
+          <h2>{{text}}</h2>
           <div class="row answers">
             <div class='span6'>
               <div class='answer true outer'>
@@ -60,6 +66,16 @@
               </div>
             </div>
           </div>
+        </div>
+        <div class="row feedback">
+          <div class="btn btn-large btn-success hidden">Correct</div>
+          <div class="btn btn-large btn-danger hidden">Incorrect</div>
+        </div>
+      </script>
+      <script id="summary-row" type="text/html">
+        <div class="row">
+          Question: {{id}}
+          Answered: {{recordedAnswer}}
         </div>
       </script>
     </body>

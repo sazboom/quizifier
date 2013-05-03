@@ -19,54 +19,62 @@ body {
   -moz-border-radius: @border_radius;
   -webkit-border-radius: @border_radius;
   box-shadow: @box_shadow;
-  .question {
-    display: none;
-    &.active {
-      display: block;
-    }
-    .answer {
-      color: white;
-      font-size: 50px;
-      background: @primary_color;
-      background-image: -webkit-gradient(
-        linear,left top, left bottom,
-        color-stop(0, @primary_color),
-        color-stop(1, @secondary_color)
-      );
-      background-image: -moz-linear-gradient(top, @primary_color, @secondary_color);
-      background-image: -o-linear-gradient(top, @primary_color, @secondary_color);
-      background-image: linear-gradient(to bottom, @primary_color, @secondary_color); 
-      width: 260px;
-      height: 260px;
-      position: relative;
-      left: 95px;
-      top: 30px;
-      border: 5px solid @secondary_color;
-      border-radius: @border_radius;
-      -moz-border-radius: @border_radius;
-      -webkit-border-radius: @border_radius;
-      box-shadow: @box_shadow;
-      vertical-align: center;
+  #questions-container{
+    .question {
 
-      .inner {
+      .answer {
         color: white;
-        position:absolute;
-        top: 110px;
-        left: 70px;
+        font-size: 50px;
+        background: @primary_color;
+        background-image: -webkit-gradient(
+          linear,left top, left bottom,
+          color-stop(0, @primary_color),
+          color-stop(1, @secondary_color)
+        );
+        background-image: -moz-linear-gradient(top, @primary_color, @secondary_color);
+        background-image: -o-linear-gradient(top, @primary_color, @secondary_color);
+        background-image: linear-gradient(to bottom, @primary_color, @secondary_color); 
+        width: 260px;
+        height: 260px;
+        position: relative;
+        left: 95px;
+        top: 30px;
+        border: 5px solid @secondary_color;
+        border-radius: @border_radius;
+        -moz-border-radius: @border_radius;
+        -webkit-border-radius: @border_radius;
+        box-shadow: @box_shadow;
+        vertical-align: center;
+
+        .inner {
+          color: white;
+          position:absolute;
+          top: 110px;
+          left: 70px;
+        }
+      }
+      .answer:hover{
+
+        background: @secondary_color;
+        background-image: -webkit-gradient(
+          linear,left top, left bottom,
+          color-stop(0, @secondary_color),
+          color-stop(1, @primary_color)
+        );
+        background-image: -moz-linear-gradient(top, @secondary_color, @primary_color);
+        background-image: -o-linear-gradient(top, @secondary_color, @primary_color);
+        background-image: linear-gradient(to bottom, @secondary_color, @primary_color);       
+
+      }  
+    }
+    .feedback {
+      margin-top: 50px;
+      .btn.hidden {
+        display: none;
       }
     }
-    .answer:hover{
-
-      background: @secondary_color;
-      background-image: -webkit-gradient(
-        linear,left top, left bottom,
-        color-stop(0, @secondary_color),
-        color-stop(1, @primary_color)
-      );
-      background-image: -moz-linear-gradient(top, @secondary_color, @primary_color);
-      background-image: -o-linear-gradient(top, @secondary_color, @primary_color);
-      background-image: linear-gradient(to bottom, @secondary_color, @primary_color);       
-
-    }  
+  }
+  #summary-container{
+    display: none;
   }
 }

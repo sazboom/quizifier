@@ -1,12 +1,13 @@
 describe("Question", function(){
   
   beforeEach(function() {
-    answer = new Answer(
+    answer = new AnswerModel(
       { "id": 1, "selected": true}
     );
-    question = new Question(
-      { "id": 1, "text": "1 + 1 = 2", "answer": answer}
+    question = new QuestionModel(
+      { "id": 1, "text": "1 + 1 = 2"}
     );
+    question.answer = answer
   });
 
   it('should have an answer of true', function(){

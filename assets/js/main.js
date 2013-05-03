@@ -10,13 +10,32 @@ requirejs.config({
         less: 'less-1.3.3.min',
 
         // Mustache.js template engine
-        icanhaz: 'ICanHaz.min'
+        icanhaz: 'ICanHaz.min',
+        question_model: 'question_model',
+        answer_model: 'answer_model',
+        answer_collection: 'answer_collection',
+        question_collection: 'question_collection',
+        questions: 'questions'
 
 
     },
     shim: {
         /* Set bootstrap dependencies (just jQuery) */
-        'bootstrap' : ['jquery']
+        'bootstrap' : ['jquery'],
+        'backbone'  : ['jquery', 'underscore'],
+        'question_model' : ['backbone'],
+        'question_view' : ['backbone'],
+        'answer_model' : ['backbone', 'question_view'],
+        'question_collection' : ['backbone', 'question_model'],
+        'answer_collection' : ['backbone', 'answer_model'],
+        'questions' : [
+            'question_model',
+            'answer_model', 
+            'question_collection', 
+            'answer_collection',
+            'icanhaz']
+
+
     }
 });
 
@@ -27,12 +46,15 @@ require([
     'backbone', 
     'less', 
     'icanhaz',
+    'question_view',
     'question_model',
-    'questions_collection',
+    'answer_model',
+    'answer_collection',
+    'question_collection',
     'questions',
 
 ],
 function($){
-    console.log("Required JavaScript libraries powered up and Online");   
+    console.log("Required JavaScript libraries powered up and Online");  
     return {};
 });

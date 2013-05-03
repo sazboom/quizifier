@@ -1,10 +1,10 @@
 describe("Answer", function(){
   
   beforeEach(function() {
-    trueAnswer = new Answer(
+    trueAnswer = new AnswerModel(
       { "id": 1, "selected": true}
     );
-    falseAnswer = new Answer(
+    falseAnswer = new AnswerModel(
       { "id": 1, "selected": false}
     );
   });

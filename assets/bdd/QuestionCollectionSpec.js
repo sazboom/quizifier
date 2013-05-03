@@ -14,4 +14,26 @@ describe("Question Collection", function(){
     expect(questionCollection.length).toEqual(4);
   })
 
+  it('should return the first question for current', function(){
+    q = questionCollection.first();
+    expect(questionCollection.currentQuestion().cid).toEqual(q.cid);
+
+  })
+
+  it ('should return the current question as the last question', function(){
+    q = questionCollection.last()
+    questionCollection.setCurrentQuestion(q)
+    expect(questionCollection.currentQuestion().cid).toEqual(q.cid) 
+  })
+
+  it ('should return the next question as id 2', function(){
+    q2 = questionCollection.at(1)
+    expect(questionCollection.nextQuestion().cid).toEqual(q2.cid)
+  })
+  it ('should return the last question when currentQuestion is last', function(){
+    q2 = questionCollection.at(3)
+    questionCollection.setCurrentQuestion(q2)
+    expect(questionCollection.nextQuestion().cid).toEqual(questionCollection.currentQuestion().cid)
+  })
+
 })
