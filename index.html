@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Quizifier</title>
+
+        <!-- Stylesheets -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/css/main.less" rel="stylesheet/less">
+
+        <!-- Scripts -->
+        <script data-main="assets/js/main.js" src="assets/js/require-jquery.js"></script>
+    </head>
+    <body>
+
+      <!-- Navbar -->
+
+      <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+          <div class="container">
+            <a class="brand" href="#">Quizifier</a>
+            <div class="nav-collapse collapse">
+              <ul class="nav">
+                <li class="active"><a href="#">Main</a></li>
+                <li><a href="SpecRunner.html">Specs</a></li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div>
+        </div>
+      </div>
+
+      <!-- End Navbar -->
+
+      <!-- Main Container -->
+
+      <div class="main-container container">
+        <div class="row">
+          <h1>Questions</h1>
+        </div>
+        <div id="questions-container">
+          
+          <!-- Questions Go Here -->
+
+        </div>
+      </div>
+
+      <!-- End Main Container -->
+
+      <script id="question" type="text/html">
+        <div class="row question {{#active}} active {{/active}}">
+          <h2>Aaron is awesome</h2>
+          <div class="row answers">
+            <div class='span6'>
+              <div class='answer true outer'>
+                <div class='inner'>True</div>
+              </div>
+            </div>
+            <div class='span6'>
+              <div class='answer false outer'>
+                <div class='inner'>False</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </script>
+    </body>
+</html>
