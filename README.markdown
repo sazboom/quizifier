@@ -17,6 +17,10 @@ Quizifier uses the following:
 * Titter Bootstrap
 
 
+Tests
+---------------------
+Click on the Spec button when running the quiz to see the specs for the Engine.
+
 **Note**
 
 Quizifier uses LessCSS in Client Mode which requires Cross Site Domain access to function properly.  Google Chome does not consider local files as part of the same domain as AJAX calls.  This means that when loading Quizifier in Chrome, you either need to run the index.html through an apache connection or load Chrome with auguments allowing local file access
