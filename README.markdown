@@ -19,7 +19,9 @@ Quizifier uses the following:
 
 **Note**
 
-Quizifier uses LessCSS in Client Mode which requires Cross Site Domain access to function properly.  Google Chome does not consider local files as part of the same domain as AJAX calls.  This means thatwhen loading Quizifier in Chrome, you either need to run the index.html through an apache connection or load Chrome using (assuming OSX) 
+Quizifier uses LessCSS in Client Mode which requires Cross Site Domain access to function properly.  Google Chome does not consider local files as part of the same domain as AJAX calls.  This means that when loading Quizifier in Chrome, you either need to run the index.html through an apache connection or load Chrome with auguments allowing local file access
+
+assuming OSX 
 
     '/Applications/Google Chrome.app' --new --args -allow-file-access-from-files'
 
