@@ -23,5 +23,5 @@ Quizifier uses LessCSS in Client Mode which requires Cross Site Domain access to
 
 assuming OSX 
 
-    '/Applications/Google Chrome.app' --new --args -allow-file-access-from-files'
+    open '/Applications/Google Chrome.app' --new --args -allow-file-access-from-files'
 
