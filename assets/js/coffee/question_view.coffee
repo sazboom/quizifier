@@ -1,50 +1,49 @@
-var QuestionView = Backbone.View.extend({
+
+class window.QuestionView extends Backbone.View
   tagName: 'div',
   events: {
     "click .answer.true": "answeredTrue",
     "click .answer.false": "answeredFalse",
   },
-  render:   function(){
+  render:   ()->
     console.log('Adding '+ this.model.get('text') );
     html = $(this.el).hide().append(ich.question(this.model.toJSON()));
     $('#questions-container').append(html);
     $(html).fadeIn('slow');
-  },
-  destroy: function(){
+
+  destroy: ()->
     console.log('Removing '+ this.model.get('text') );
     $(this.el)
       .fadeOut('slow')
       .remove();
-  },
-  answeredTrue: function(e){
+
+  answeredTrue: (e)->
     this.model.recordAnswer(true)
     this.showFeedback(e);
-    setTimeout(function(){
+    this.delay 1000, ->
       questions.moveQuestion()
-    }, 1000);
-  },
-  answeredFalse: function(e){
+
+  answeredFalse: (e)->
     this.model.recordAnswer(false)
     this.showFeedback(e);
-    setTimeout(function(){
+    this.delay 1000, ->
       questions.moveQuestion()
-    }, 1000);
-  },
-  showFeedback: function(e){
-    if(this.model.answeredCorrectly()){
+
+
+  delay: (ms, func) -> setTimeout func, ms 
+
+  showFeedback: (e)->
+    if this.model.answeredCorrectly()
       $(e.currentTarget)
         .parents('.question')
         .siblings('.feedback')
         .find('.btn-success')
         .removeClass('hidden');
-      
-    }
-    else{
+
+    else
        $(e.currentTarget)
         .parents('.question')
         .siblings('.feedback')
         .find('.btn-danger')
         .removeClass('hidden');     
-    }
-  }
-})
+
